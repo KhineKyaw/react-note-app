@@ -1,0 +1,22 @@
+:root {
+    --enb-size: 28px;
+    --helf-enb-size: calc(var(--enb-size) / 2);
+    --icon-enb-size: 13px;
+}
+
+.enb {
+    width: var(--enb-size);
+    height: var(--enb-size);
+    border-radius: var(--helf-enb-size);
+    color: #fff;
+    background-color: #141315;
+    outline: none;
+    border: none;
+    overflow: hidden;
+}
+
+.edit-icon {
+    display: flex;
+    margin: auto;
+    font-size: var(--icon-enb-size);
+}

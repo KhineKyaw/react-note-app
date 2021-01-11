@@ -1,0 +1,22 @@
+:root {
+    --size: 34px;
+    --helf-size: calc(var(--size) / 2);
+    --icon-size: 22px;
+}
+
+button {
+    width: var(--size);
+    height: var(--size);
+    border-radius: var(--helf-size);
+    color: #fff;
+    background-color: #141315;
+    outline: none;
+    border: none;
+    overflow: hidden;
+}
+
+.icon {
+    display: flex;
+    margin: auto;
+    font-size: var(--icon-size);
+}

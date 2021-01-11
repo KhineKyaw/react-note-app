@@ -1,38 +1,171 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;1,400&display=swap");
+
+:root {
+  --note-margin: 10px;
+  --total-notes-size: 800px;
+  --scroll-bar-width: 2px;
+  --notes-parent-offset: 60px;
+  --note-container-size: calc(
+    var(--scroll-bar-width) + var(--notes-parent-offset)
+  );
+  --note-container-size-4: calc(
+    var(--note-size) * 4 + var(--note-container-size) +
+      calc(var(--note-margin) * 8)
+  );
+  --note-container-size-3: calc(
+    var(--note-size) * 3 + var(--note-container-size) +
+      calc(var(--note-margin) * 6)
+  );
+  --note-container-size-2: calc(
+    var(--note-size) * 2 + var(--note-container-size) +
+      calc(var(--note-margin) * 4)
+  );
+  --note-container-size-1: calc(
+    var(--note-size) * 1 + var(--note-container-size) +
+      calc(var(--note-margin) * 2)
+  );
+}
+
+* {
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+button {
+  cursor: pointer;
+}
+
 .App {
-  text-align: center;
+  display: flex;
+  flex: 1;
+  height: 100vh;
+  background-color: #e5e9f4;
+  justify-content: center;
+  /* align-items: center; */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container {
+  display: flex;
+  margin: 0px 40px;
+  background-color: #fff;
+  height: 96vh;
+  margin-top: 4vh;
+  border-top-right-radius: 18px;
+  border-top-left-radius: 18px;
+  overflow: hidden;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.main-note-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  width: var(--note-container-size-4);
+  padding: 20px 40px 0;
 }
 
-.App-link {
-  color: #61dafb;
+.note-container-div {
+  margin: 0px -10px;
+  height: auto;
+  overflow-y: hidden;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
+.note-container-div:hover {
+  overflow-y: scroll;
+}
+
+.delete-btn-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  transition: 320ms;
+  cursor: pointer;
+}
+
+.delete-btn-container:hover {
+  opacity: 1;
+}
+
+.delete-btn-container button {
+  position: absolute;
+  bottom: 0;
+  right: 45px;
+  margin-bottom: 10px;
+}
+
+/* Animations */
+@keyframes exampleRot {
+  0% {
     transform: rotate(0deg);
   }
-  to {
+  100% {
     transform: rotate(360deg);
   }
+}
+
+.rotate1 {
+  animation-name: exampleRot;
+  animation-duration: 1s;
+  /* animation-delay: 2s; */
+}
+/* End Animations */
+
+/* Media queries */
+@media (max-width: 672px) {
+  .main-note-container {
+    width: var(--note-container-size-1);
+  }
+}
+
+@media (min-width: 673px) and (max-width: 892px) {
+  .main-note-container {
+    width: var(--note-container-size-2);
+  }
+}
+
+@media (min-width: 893px) and (max-width: 1112px) {
+  .main-note-container {
+    width: var(--note-container-size-3);
+  }
+}
+
+/* Scroll bar */
+/* width */
+::-webkit-scrollbar {
+  width: var(--scroll-bar-width);
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 1px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  /* background: #c5c5c5; */
+  background: lightgray;
+  border-radius: 2px;
+  height: 2px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: lightblue;
+}
+
+/* Input select colors */
+::-moz-selection {
+  /* Code for Firefox */
+  color: #fafafa;
+  background: #151515e0;
+}
+
+::selection {
+  color: #fafafa;
+  background: #151515e0;
 }

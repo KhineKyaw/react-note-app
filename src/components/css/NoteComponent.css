@@ -1,0 +1,93 @@
+:root {
+  --note-size: 200px;
+  --note-border: 16px;
+}
+
+.note-div {
+  display: inline-block;
+  flex-direction: column;
+  background-color: skyblue;
+  width: var(--note-size);
+  height: var(--note-size);
+  border-radius: var(--note-border);
+  padding: 20px;
+  margin: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* .note-div:nth-child(4n) {
+  margin: 0 0 10px 0;
+} */
+
+.note-text {
+  white-space: pre-wrap;
+  background-color: transparent;
+  line-height: 20px;
+}
+
+.note-textarea {
+  height: 100%;
+  line-height: 20px;
+  border: none;
+  outline: none;
+  appearance: none;
+  resize: none;
+  padding: 0;
+}
+
+.note-created {
+  color: #151515;
+  font-size: 90%;
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 20px;
+}
+
+.note-btn-container {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 0 10px 10px 0;
+}
+
+.note-bottom-overlay {
+  position: absolute;
+  height: 50px;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  /* border: 1px solid rgba(0, 0, 0, 0.24); */
+}
+
+/* Scroll bar */
+/* width */
+.note-textarea::-webkit-scrollbar {
+  width: var(--scroll-bar-width);
+}
+
+/* Track */
+.note-textarea::-webkit-scrollbar-track {
+  background: #f1f1f130;
+  border-radius: 1px;
+}
+
+/* Handle */
+.note-textarea::-webkit-scrollbar-thumb {
+  /* background: #c5c5c5; */
+  background: #15151540;
+  border-radius: 2px;
+  height: 2px;
+}
+
+/* Handle on hover */
+.note-textarea::-webkit-scrollbar-thumb:hover {
+  background: lightblue;
+}
+
+/* Input select colors */
+.note-textarea::-moz-selection {
+  /* Code for Firefox */
+  color: #fafafa;
+  background: #151515e0;
+}

@@ -1,0 +1,23 @@
+:root {
+  --color-btn-size: 18px;
+  --color-btn-radius: calc(var(--color-btn-size) / 2);
+}
+
+.class-hidden {
+  visibility: hidden;
+}
+
+.color-buttons {
+  display: flex;
+  position: relative;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 30px;
+}
+
+.color-btn {
+  width: var(--color-btn-size);
+  height: var(--color-btn-size);
+  border-radius: var(--color-btn-radius);
+  margin-bottom: 20px;
+}

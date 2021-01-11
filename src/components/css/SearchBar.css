@@ -1,0 +1,41 @@
+input {
+  height: 30px;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid transparent;
+  padding: 0 20px;
+  margin: 0 -18px;
+}
+
+input:focus {
+  border-bottom: 1px solid #151515;
+}
+
+.search-container {
+  display: flex;
+}
+
+.search-icon-container {
+  color: gray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 5px;
+  z-index: 2;
+}
+
+.search-icon {
+  font-size: 110%;
+}
+
+.clear-icon-container {
+  color: gray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 5px;
+}
+
+.clear-icon {
+  font-size: 116%;
+}
