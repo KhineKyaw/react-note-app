@@ -1,0 +1,29 @@
+.empty-div {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 80px;
+}
+
+.empty-icon {
+  font-size: 700%;
+  color: #eeeeee;
+}
+
+.empty-text-bold {
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.empty-text-small {
+  font-size: 86%;
+  margin-top: 10px;
+}
+
+.empty-text-bold,
+.empty-text-small {
+  text-align: center;
+  color: gray;
+}

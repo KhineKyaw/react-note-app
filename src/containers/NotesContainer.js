@@ -3,6 +3,7 @@ import React from "react"
 import "../App.css"
 import SearchBar from "../components/SearchBar"
 import NoteComponent from "../components/NoteComponent"
+import EmptyView from "../components/EmptyView"
 
 function NotesContainer(props) {
   const styles = {
@@ -27,6 +28,18 @@ function NotesContainer(props) {
       )
     : [...props.notes]
 
+  const NotesArray = notes.map(note => (
+    <NoteComponent
+      {...note}
+      key={note.id}
+      changed={props.changed(note.id)}
+      edit={props.edit(note.id)}
+      delete={props.delete(note.id)}
+      disableSelect={props.disableSelect(note.id)}>
+      {note.text}
+    </NoteComponent>
+  ))
+
   return (
     <div className='main-note-container'>
       <SearchBar
@@ -35,19 +48,11 @@ function NotesContainer(props) {
         changed={props.search}
       />
       <span style={styles.title}>{title}</span>
-      <div className='note-container-div'>
-        {notes.map(note => (
-          <NoteComponent
-            {...note}
-            key={note.id}
-            changed={props.changed(note.id)}
-            edit={props.edit(note.id)}
-            delete={props.delete(note.id)}
-            disableSelect={props.disableSelect(note.id)}>
-            {note.text}
-          </NoteComponent>
-        ))}
-      </div>
+      {notes.length ? (
+        <div className='note-container-div'>{NotesArray}</div>
+      ) : (
+        <EmptyView search={props.searchValue} />
+      )}
     </div>
   )
 }

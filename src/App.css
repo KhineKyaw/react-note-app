@@ -72,7 +72,7 @@ button {
 }
 
 .note-container-div:hover {
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 .delete-btn-container {
