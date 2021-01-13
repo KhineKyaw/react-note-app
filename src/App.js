@@ -4,19 +4,16 @@ import React, { Component } from "react"
 import ToolsBar from "./containers/ToolsBar"
 import NotesContainer from "./containers/NotesContainer"
 
+const storeKey = "myNotes"
+
 class App extends Component {
   state = {
-    notes: [],
+    notes: JSON.parse(localStorage.getItem(storeKey)) || [],
     searchValue: ""
   }
 
-  componentDidMount() {
-    // localStorage.clear()
-    this.setState({ notes: JSON.parse(localStorage.getItem("myNotes")) || [] })
-  }
-
   componentDidUpdate() {
-    localStorage.setItem("myNotes", JSON.stringify(this.state.notes))
+    localStorage.setItem(storeKey, JSON.stringify(this.state.notes))
   }
 
   addNoteHandler = note => {
