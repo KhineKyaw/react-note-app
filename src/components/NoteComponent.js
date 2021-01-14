@@ -64,4 +64,10 @@ function NoteComponent(props) {
   )
 }
 
-export default NoteComponent
+const notePropsAreEqual = (prevNote, nextNote) => {
+  return (
+    prevNote.editing === nextNote.editing && prevNote.text === nextNote.text
+  )
+}
+
+export default React.memo(NoteComponent, notePropsAreEqual)
